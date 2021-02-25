@@ -1,0 +1,69 @@
+
+create database db_1 utf8MB4
+
+alter database db_1 charset gbk
+
+show database
+
+drop database db_1	删除数据库
+
+select * frome T_Students
+
+Insert into T_Students(Id,Gender,Age,Name) value(4,0,30,'谢霆锋')
+
+Update T_Students Set Age=10 
+where Name='tom'
+
+Delete from T_Students where Age>50 or Age<=20
+
+select Name as '姓名',Salary as '工资',Age+1 from T_Employees
+
+select * from T_Employees
+where age>25
+
+select count(*) from  T_Employees
+where age>25
+
+select sum(salary) from T_Employees
+where age>25
+
+select avg(salary) from T_Employees
+where age>25
+
+select * from T_Employees
+where Age>25
+order by age ASC,salary DESC
+-- 年龄大于25，按年龄升序，年龄相同则工资降序排列
+-- order by需要放在最后，limit之前
+
+select * from T_Employees
+where Name like '_erry'
+-- '_erry'单字符匹配
+
+select * from T_Employees
+where Name like 'T%'
+-- 'T%'多字符匹配
+
+select * from T_Employees
+where Name!=null
+-- 结果不确定
+
+select * from T_Employees
+where Name is not null
+-- 搜索名字不为’不确定‘的记录
+
+select * from T_Employees
+where age>15
+order by age ASC
+limit 2,3
+-- 顺序 where,order by,limit
+
+select age,count(*) from T_Employees
+group by age
+-- 按年龄分组后，统计各组个数
+
+select o.Number,o.Price,c.Name,c.Age
+from T_Orders as o
+left join T_Customers as c
+on o.CustomerId=c.Id
+

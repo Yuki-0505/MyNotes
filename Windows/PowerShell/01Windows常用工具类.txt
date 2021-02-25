@@ -1,0 +1,33 @@
+运行程序		运行命令
+
+记事本		notepad
+计算器		calc
+画图		mspaint
+写字板		write
+Windows放大镜	magnify
+辅助工具管理器	utilman
+Telnet客户端	telnet
+任务管理器	taskmgr
+关闭Windows	shutdown
+扫描仪与相机	sticpl.cpl
+远程桌面		mstsc
+可移动存储	ntmsmgr.msc
+注册表编辑器	regedit
+TrueType造字程序	eudcedit
+打印机文件夹	printers
+打印机和传真	control printers
+控制面板		control
+屏幕键盘		osk
+网络连接		ncpa.cpl 或control netconnections
+从Windows注销	logoff
+字体文件夹	fonts 或control fonts
+磁盘管理		diskmgmt.msc
+快速查找		findfast.cpl
+磁盘碎片整理程序	dfrg.msc
+磁盘检查工具	chkdsk
+磁盘清理工具	cleanmgr
+命令行提示符	cmd
+剪贴簿查看器	clipbrd
+辅助功能选项	access.cpl
+添加硬件向导	hdwwiz.cpl
+添加或删除程序	appwiz.cpl

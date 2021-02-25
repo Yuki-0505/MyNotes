@@ -1,0 +1,8 @@
+下载插件
+MySQL,MySQL Syntax
+依次输入IP,user,password,port,null
+1、更新用户名密码
+ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'password'
+2、刷新权限
+flush privileges
+

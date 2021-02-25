@@ -1,0 +1,57 @@
+安装go 插件
+
+
+在$GOPATH目录下创建bin,pkg,src
+切换到$GOPATH/bin目录下，打开终端输入以下命令（以下12条命令可不执行），不需要翻墙：
+
+go get -u -v github.com/josharian/impl
+go get -u -v github.com/mdempsky/gocode
+go get -u -v github.com/rogpeppe/godef
+go get -u -v github.com/golang/lint/golint
+go get -u -v github.com/lukehoban/go-find-references
+go get -u -v github.com/lukehoban/go-outline
+go get -u -v github.com/sqs/goreturns
+go get -u -v golang.org/x/tools/cmd/gorename
+go get -u -v github.com/tpng/gopkgs
+go get -u -v github.com/newhook/go-symbols
+go get -v -u github.com/peterh/liner github.com/derekparker/delve/cmd/dlv 
+go get -u -v golang.org/x/tools/cmd/guru
+
+一共 11 个插件，由于被墙和依赖的缘故，很多插件是没办法正常安装的，但是go官方在github是有镜像仓库的，所以我们可以借助github来安装。
+在src下创建golang.org/x/两个文件夹，然后切换到此目录下，打开终端输入：
+
+git clone https://github.com/golang/tools.git
+git clone https://github.com/golang/lint.git
+git clone https://github.com/golang/mod.git
+git clone https://github.com/golang/xerrors.git
+
+切换到$GOPATH目录下，打开终端输入以下命令安装，安装那些你上一步没有成功的插件：
+
+go install github.com/mdempsky/gocode
+go install github.com/rogpeppe/godef
+go install github.com/lukehoban/go-find-references
+go install github.com/lukehoban/go-outline
+go install github.com/sqs/goreturns
+go install golang.org/x/tools/cmd/gorename
+go install github.com/tpng/gopkgs
+go install github.com/josharian/impl
+go install github.com/newhook/go-symbols
+go install golang.org/x/tools/cmd/guru 
+go install golang.org/x/lint/golint
+go install github.com/peterh/liner github.com/derekparker/delve/cmd/dlv 
+
+此时所有插件安装成功。
+
+第三方库依赖
+
+
+安装net库解决警告，切换到x目录，然后打开终端执行：
+
+git clone git@github.com:golang/net.git --depth 1
+
+然后重启vscode即可。
+安装text库解决警告，切换到x目录，然后打开终端执行：
+
+git clone git@github.com:golang/text.git --depth 1
+
+然后重启vscode即可

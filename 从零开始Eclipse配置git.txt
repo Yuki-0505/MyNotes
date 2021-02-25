@@ -1,0 +1,12 @@
+1、添加信息
+Windows->Preferences->Team->Git->Configuration
+user.name user.email
+2、分享项目
+右键项目->Team->Share Project
+3、提交项目
+右键项目->Team->Commit
+填写信息
+commit and push
+4、获取项目
+右键空白->import->git->Projects from Git
+复制url->输入用户名密码

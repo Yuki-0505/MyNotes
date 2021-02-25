@@ -1,0 +1,6 @@
+1、先把这个msdia80.dll复制到
+C:\Program Files\Common Files\Microsoft Shared\VC\
+2、管理员cmd执行
+regsvr32 "C:\Program Files\Common Files\Microsoft Shared\VC\msdia80.dll"
+3、删除D/E下文件
+

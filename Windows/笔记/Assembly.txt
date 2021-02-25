@@ -1,0 +1,80 @@
+Debug：
+
+R命令查看、改变CPU寄存器的内容；
+D命令查看内存中的内容；
+E命令改写内存中的内容；
+U命令将内存中的机器指令翻译成汇编指令；
+T命令执行一条机器指令；
+A命令以汇编指令的格式在内存中写入一条机器指令；
+G命令执行代码到指定位置；
+P命令执行完代码循环；
+
+80*25彩色字符模式显示缓冲区 内存地址 B8000H ~ BFFFFH
+
+寄存器：
+
+AX通用寄存器
+BX偏移地址寄存器
+CX循环次数寄存器
+SI、DI源、目的偏移地址寄存器
+CS、IP代码 段地址、偏移地址、
+DS、ES数据 段寄存器、附加段寄存器
+SS、SP栈 段地址、偏移地址
+
+标志寄存器：
+ZF运算结果是否为零
+PF运算结果bit“1”个数是否为偶数
+SF运算结果是否为负
+CF无符号数运算是否进位
+OF有符号数运算是否溢出
+DS方向标志位
+
+
+偏移地址表示：	16[bx]	[bx][16]	[bx].16	[bx+16]	[16+bx]	[bx][si]	[bx+si]
+		[bx+200+si]	16[bx][si]	[bx].16[si]	[bx][si].16
+定义数据：
+db、dw、dd
+db 3 dup (0,1,2) = db 0,1,2,0,1,2,0,1,2
+
+指令：
+
+nop		#空指令
+mov ax, bx	#ax = bx
+add ax, bx		#ax = ax + bx
+sub ax, bx		#ax = ax - bx
+adc ax, bx		#ax = ax + bx +CF
+sbb ax, bx		#ax = ax - bx - CF
+cmp ax, bx	#仅修改flag寄存器值，比较
+je s		#等于则转移
+jne s		#不等于则转移
+jb s		#小于则转移
+jnb s		#不小于则转移
+ja s		#大于则转移
+jna s		#不大于则转移
+cld		#flag寄存器DF置0
+std		#flag寄存器DF置1
+
+jmp 1000H:0010H	#cs = 1000H, ip = 0010H,debug中使用
+jmp shot s		#(IP) = (IP) + 8位位移
+jmp near ptr s	#(IP) = (IP) + 16位位移
+jmp far ptr s	#跳转到s所在CS:IP
+jmp word ptr ds:ip	#从内存指定IP
+jmp dword ptr ds:ip	#从内存指定CS:IP
+jcxz s		#if(cx == 0) jmp short s
+
+push ax		#进栈
+pop ax		#出栈
+inc bx		#自增
+dec bx		#自减
+mov word ptr [bx],16		#指定字型数据
+offset s		#获取标号偏移地址
+seg s		#获取标号段地址
+
+mov cx, 12
+s:add ax,ax
+loop s		#循环
+
+rep movsb
+
+s:movsb
+loop s

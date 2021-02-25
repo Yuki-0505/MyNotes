@@ -1,0 +1,2 @@
+在设置中搜索run code config
+将run in terminal打勾即可

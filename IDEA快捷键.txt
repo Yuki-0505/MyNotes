@@ -1,0 +1,13 @@
+Ctrl+X		删除整行
+Ctrl+D		向下复制整行
+Ctrl+W		递进式选择代码块
+Alt+,		智能补全代码
+Alt+Insert		代码自动生成，set/get、构造函数、toString等
+Alt+Enter		快速修复光标处问题
+Ctrl+Alt+L	格式化代码
+Ctrl+Alt+O	自动导包
+Ctrl+Alt+V	快速引进变量
+Ctrl+Alt+Space	类名自动完成
+Ctrl+Shift+Space	智能提示代码
+Ctrl+Shift+Backspace	自动结束代码，行末自动添加分号
+Alt+Shift+Up/Down	整行移动

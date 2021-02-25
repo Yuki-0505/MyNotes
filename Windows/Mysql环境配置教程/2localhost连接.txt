@@ -1,0 +1,5 @@
+控制面板\所有控制面板项\程序和功能
+启用或关闭Windows功能
+勾选
+Internet Information Services
+Internet Information Services 可承载的Web核心

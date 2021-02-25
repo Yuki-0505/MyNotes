@@ -1,0 +1,5 @@
+netstat -a 查看开启了哪些端口,常用netstat -an
+netstat -n 查看端口的网络连接情况，常用netstat -an
+netstat -v 查看正在进行的工作
+netstat -p 协议名 例：netstat -p tcq/ip 查看某协议使用情况（查看tcp/ip协议使用情况）
+netstat -s 查看正在使用的所有协议使用情况

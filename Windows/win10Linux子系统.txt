@@ -1,0 +1,65 @@
+1、设置-开发者选项-开发人员模式
+控制面板-程序-启用或关闭win功能-使用与linux的win子系统
+2、用商店下载，设置密码
+3、换源
+sudo vim /etc/apt/sources.list
+复制
+deb http://mirrors.aliyun.com/ubuntu/ bionic main restricted universe multiverse
+deb-src http://mirrors.aliyun.com/ubuntu/ bionic main restricted universe multiverse
+
+deb http://mirrors.aliyun.com/ubuntu/ bionic-security main restricted universe multiverse
+deb-src http://mirrors.aliyun.com/ubuntu/ bionic-security main restricted universe multiverse
+
+deb http://mirrors.aliyun.com/ubuntu/ bionic-updates main restricted universe multiverse
+deb-src http://mirrors.aliyun.com/ubuntu/ bionic-updates main restricted universe multiverse
+
+deb http://mirrors.aliyun.com/ubuntu/ bionic-proposed main restricted universe multiverse
+deb-src http://mirrors.aliyun.com/ubuntu/ bionic-proposed main restricted universe multiverse
+
+deb http://mirrors.aliyun.com/ubuntu/ bionic-backports main restricted universe multiverse
+deb-src http://mirrors.aliyun.com/ubuntu/ bionic-backports main restricted universe multiverse
+粘贴
+sudo apt-get update
+4、下载中文
+sudo apt install -y --force-yes --no-install-recommends fonts-wqy-microhei
+sudo apt install -y --force-yes --no-install-recommends ttf-wqy-zenhei
+sudo vim .profile
+添加
+export LANG="zh_CN.UTF-8"
+export LC_ALL="zh_CN.UTF-8"
+退出
+sudo dpkg-reconfigure locales
+空格选择
+zh_CN.GB2312
+zh_CN.GBK
+zh_CN.UTF-8
+tab键到ok，回车
+选择zh-CN.UTF-8回车
+重启系统
+cmd管理员输入
+net stop LxssManager
+net start LxssManager
+查看字体
+fc-list :lang=zh-cn
+5、安装桌面
+sudo apt-get install xubuntu-desktop
+如果出现错误：
+sudo mv /var/lib/dpkg/info /var/lib/dpkg/info.bak
+sudo mkdir /var/lib/dpkg/info
+sudo apt-get update
+重新输入出错的命令sudo apt-get install ***
+	如果出现W:APT...
+	输入sudo dpkg -C
+	重新输入出错的命令sudo apt-get install ***
+sudo mv /var/lib/dpkg/info/* /var/lib/dpkg/info.bak
+sudo rm -rf /var/lib/dpkg/info
+sudo mv /var/lib/dpkg/info.bak /var/lib/dpkg/info
+6、远程图形界面设置
+sudo apt-get install xrdp
+sudo sed -i 's/port=3389/port=3390/g' /etc/xrdp/xrdp.ini
+sudo echo xfce4-session >~/.xsession
+sudo service xrdp restart
+7、关闭图形界面
+sudo service xrdp stop
+
+

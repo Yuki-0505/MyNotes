@@ -1,0 +1,10 @@
+Alt+Shift+K	删除当前行
+Ctrl+N		新建文本
+Ctrl+[,Ctrl+]	代码缩进
+Alt+Shift+F	格式化代码
+Alt+UP,Alt+Down	整行移动代码
+Alt+Shift+UP,Down	整行复制代码
+Ctrl+Enter	向下另起一行
+Ctrl+Shift+Enter	向下另起一行
+Home，End	光标移动到行首，行位
+Ctrl+Home，End	光标移动到文首，文位

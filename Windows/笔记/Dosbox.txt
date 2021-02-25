@@ -1,0 +1,11 @@
+DOSBox 0.74-2 Options.bat
+
+
+
+[autoexec]
+# Lines in this section will be run at startup.
+# You can put your MOUNT lines here.
+
+MOUNT C D:\workspace\MASM
+set PATH=$PATH$;D:\workspace\MASM
+C:

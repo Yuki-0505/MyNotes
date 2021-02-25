@@ -1,0 +1,10 @@
+默认Ipconfig为显示当前网络基本连接信息
+
+显示连接配置 ipconfig /all
+显示DNS缓存内容 ipconfig /displaydns
+去除DNS缓存内容 ipconfig /flushdns
+释放全部(或指定)适配器的由DHCP分配的动态IP地址) ipconfig /release
+为全部适配器重新分配IP地址 ipconfig /renew
+刷新DHCP并重新注册DNS ipconfig /registerdns
+显示DHCP Class ID ipconfig /showclassid
+修改DHCP Class ID ipconfig /setclassid

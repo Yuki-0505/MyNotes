@@ -1,0 +1,8 @@
+1、用户名，邮箱
+git config --global user.name 'Yuki-0505'
+git config --global user.email '2243104010@qq.com'
+2、创建ssh
+ssh-keygen -t rsa -C "Yuki-0505@2243104010@qq.com"
+3、将用户下的.ssh文件中的公钥.pub复制添加到GitHub的ssh中
+4、建立通信
+ssh -T git@github.com

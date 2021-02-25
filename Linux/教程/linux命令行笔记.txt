@@ -1,0 +1,288 @@
+快捷键
+ctrl+p	上翻历史命令
+ctrl+n	下翻历史命令
+ctrl+b	左移光标
+ctrl+f	右移光标
+ctrl+a	光标移动至行最前端
+ctrl+e	光标移动至行最后端
+ctrl+h	删除光标前字符
+ctrl+D	删除光标后字符
+ctrl+l	清屏
+
+tree	查看目录
+白色	普通文件
+蓝色	目录
+绿色	可执行文件
+红色	压缩文件
+青色	链接文件
+黄色	设备文件
+灰色	其他文件
+
+date	显示时间
+history	显示历史命令
+ls -a	显示所有文件
+ls -l	显示详细信息 
+	文件类型|所有者权限rwx|同组用户权限|其他人权限|硬连接数|所有者 r:read|w:write|x:执行
+cd -	切换至相邻目录
+sudo su	切换至超级用户
+pwd	显示当前路径
+mkdir -p	创建多层目录
+mkfifo	创建管道
+rmdir	删除空目录
+rm -r	递归删除多层目录
+rm -ri	递归删除多层目录，需要逐个确认
+touch	创建文档
+cat	查看文档
+more	可翻页查看文档
+less	可翻页查看文档
+head -5	查看文档前5行
+cp-r	复制多层目录
+mv	移动文件或改名
+ln	文件创建硬连接
+wc	获取文本信息
+od
+df
+which ls	查找命令所在磁盘目录
+chmod	修改权限
+	chmod [who][+|-|=][mode]
+	who:
+	所有者：u
+	所属组：g
+	其他人：o
+	所有人：a
+	+|-|=：加|减|覆盖权限
+	mode：
+	r：读 w：写 x：执行
+	chmod a=w hello.c
+	chmod 777 hello.c
+chown	yuki:yuki	修改所有者及组
+chgrp	yuki	修改组
+find	查找和检索
+find /home -name "*.c"
+find /home -size +10k -size -10M
+find /home -type [d/f/b/c/s/p]
+grep -r	按内容查找
+安装和卸载
+apt-get
+安装:sudo apt-get install tree
+移除:sudo apt-get remove tree
+更新:sudo apt-get update tree
+清理安装包:sudo apt-get clean
+	实际清理:/var/cache/apt/archives/*.deb
+aptitude
+...
+重新安装:sudo aptitude reinstall tree
+显示状态:sudo aptitude show tree
+deb包安装
+安装:sudo dpkg -i *.deb
+删除:sudo dpkg -r *
+sudo fdisk -l	查看设备信息
+sudo mount /dev/sda8 /mnt	挂载U盘
+sudo umount /mnt	卸载U盘
+gzip *.cpp	不保留源文件压缩
+gunzip *.cpp.gz	解压
+bzip2 -k *.cpp	保留源文件压缩
+bunzip2 *.cpp.bz2	解压
+tar
+	c-创建
+	x-解压
+	v-显示提示信息
+	f-指定压缩文件名字
+
+	z-使用gzip压缩-*.gz
+	j-使用bzip压缩-*.bz2
+压缩
+tar zcvf hello.tar.gz *.cpp
+tar jcvf hello.tar.bz2 *.cpp
+解压
+tar zxvf hello.tar.gz		解压至当前目录
+tar zxvf hello.tar.gz -C hello/	指定解压目录
+rar
+rar a hello *.cpp	压缩
+rar x hello.rar		解压
+rar x helo.rar temp	制定目录解压
+zip
+zip hello *.cpp		压缩
+zip -r hello cpp/	压缩目录
+unzip hello.zip		解压
+unzip hello.zip -d temp	解压至指定目录
+ps
+	a-所有
+	u-显示用户
+	x-显示无终端进程
+ps aux | grep bash	ps的输出作为grep的输入进行查找bash相关进程
+kill -l	查看信号
+kill -SIGKILL 2019	杀死进程
+kill -9 2019	杀死进程
+env	查看环境变量
+top	任务查看器
+ln -s /home/yuki/桌面/hello hello	创建绝对路径软链接
+sudo apt install net-tools	安装网络工具
+ifconfig	查看网络信息
+ping www.bilibili.com -c 4
+nslookup www.bilibili.com	查看域名ip
+sudo adduser yuki	添加用户
+sudo groupadd guest	添加组
+sudo useradd -s /bin/bash -g yuki -d /home/yuki -m yuki	添加用户
+passwd
+sudo passwd yuki	修改密码
+sudo passwd root
+sudo deluser	删除用户
+sudo userdel -r yuki	彻底删除用户
+sudo chgrp -R guest python	修改文件所属组
+sudo chown guest python		修改所属用户
+vsftpd服务器
+sudo apt-get install vsftpd	安装vsftpd
+sudo gedit /etc/vsftpd.conf	打开目录
+	anonymous_enable=YES	允许匿名用户登陆
+	write_enable=YES	实名用户拥有写权限（可上传数据）
+	local_umask=022		设置本地掩码022
+	anon_upload_enable=YES	匿名用户可向ftp服务器上传数据
+	anon_mkdir_write_enable=YES	匿名用户可在ftp服务器上创建目录
+	anon_root=/home/rose/anonFtp/	服务器配置匿名用户工作空间
+sudo service vsftpd restart	重启ftpd服务
+ftp 192.168.43.127	实名登陆服务器
+nami	密码
+put file	上传文件
+get file	下载文件
+ftp 192.168.43.127
+anonymous	匿名用户登陆
+sudo apt-get install lftp	安装ftp客户端
+lftp 192.168.43.127
+login	匿名登陆
+lpwd	查看当前目录
+lcd	切换目录
+mput	上传多个文件
+mget	下载多个文件
+mirror	-R	上传目录
+mirror	下载目录
+sudo apt-get install nfs-kernel-server	安装nfs服务器
+sudo gedit /etc/exports	打开配置文件
+	/home/yuki/NfsShare *(rw, sync)	写入共享文件路径及i权限
+sudo service nfs-kernel-server restart	重启服务
+sudo mount 192.168.43.127:/home/yuki/NfsShare /mnt	挂载共享目录
+sudo apt-get install openssh-server	安装ssh服务器
+sudo aptitude show openssh-server	查看安装是否成功
+ssh yuki@192.168.43.127		登陆
+logout	退出登陆
+scp -r yuki@192.168.43.127:/home/yuki/anonFtp /home/yuki/hello	远程复制下载文件
+免密登陆ssh
+ssh-keygen
+ssh-copy-id ser@remote
+给服务器起别名
+vim ~/.ssh/config
+Host guest
+    HostName 192.168.43.127
+    User guest
+    Port 22
+man man	查看帮助文档
+echo $PATH	查看环境变量
+vim
+命令模式：
+光标
+h/j/k/l		左/下/上/右
+0/$	行首/行末
+gg/G	文本最前/文本末尾
+剪切（删除）
+x/X	后删除/前删除
+d/d0/D	删除/删除光标至行首/删除光标至行末尾
+dw	删除单词
+dd	删除当前行
+4dd	删除光标后4行
+u	撤销
+ctrl+r	反撤销
+k/p	当前行下一行粘贴/当前行粘贴
+y/yy/4yy	复制选中内容/复制当前行/复制当前行在内的后4行
+v	切换到可视模式
+末行模式
+:/stdio.h	向下查找stdio.h
+:?stdio.h	向上查找stdio.h
+命令模式
+#	查找光标所在单词
+n/N	查找后遍历
+r + c	将光标后字符替换为c
+>> <<	右缩进 左缩进
+从命令模式进入编辑模式
+a	从光标后开始编辑
+A	从行尾开始编辑
+i	从光标前开始编辑
+I	从行首开始编辑
+o	换行开始编辑
+O	向上换行开始编辑
+s	删除光标后字符再开始编辑
+S	删除光标所在行再开始编辑
+末行模式
+:s/tom/jack/	将光标行第一个tom替换为jack
+:s/tom/jack/g	将光标行tom替换为jack
+:%s/tom/jack/g	将所有行tom替换为jack
+:27，30s/tom/jack/g	将27到30行tom替换为jack
+:!pwd	末行模式下执行pwd命令
+:w	保存
+:q	推出
+:!	不保存
+sp	水平分屏
+vsp	垂直分屏
+vsp main.cpp	垂直分屏打开新文件
+ctrl+ww	切换屏
+gcc
+gcc -E hello.c -o hello.i	预处理
+gcc -S hello.i -o hello.s	转汇编
+gcc -c hello.s -o hello.o	转二进制
+gcc hello.o -o hello	链接
+./hello	执行
+gcc hello.c -o hello	简化封装编译
+gcc hello.c	默认生成a.out
+gcc hello.c -I ./include -o hello	指定头文件目录
+gcc hello.c -D DEBUG	指定宏定义
+gcc hello.c -O 		优化程序
+gcc hello.c -Wall	提示警告信息
+gcc hello.c -g		生成程序中包含调试信息
+静态库制作
+gcc *.c -c
+ar rcs libmytest.a *.o
+nm libmytest.a
+静态/共享库制作
+gcc -fPIC -c *.c sub.c
+gcc -shared -o libMyCalc.so *.o
+ldd	查看程序所依赖的动态库
+...
+
+makefile
+目标:依赖文件
+	命令
+app:main.o add.o sub.o mul.o
+    gcc main.o add.o sub.o mul.o -o app
+    
+main.o:main.c
+    gcc -c main.c
+    
+add.o:add.c
+    gcc -c add.c
+    
+sub.o:sub.c
+    gcc -c sub.c
+    
+mul.o:mul.c
+    gcc -c mul.c
+优化
+obj=main.o add.o sub.o mul.o
+target=app		变量
+target:$(obj)
+    gcc $(obj) -o $(target)		$()取值
+%.o:%.c		模式匹配
+	gcc -c $< -o $@	自动变量
+自动变量
+$<	规则中的第一个依赖
+$^	规则中的所有依赖
+$@	规则中的目标
+再优化
+src=$(wildcard ./*.c)	获取指定路径下文件
+obj=$(patsubst ./%.c, ./%.o, $(src))	替换文件名
+CC = gcc
+target=app		变量
+target:$(obj)
+    $(CC) $(obj) -o $(target)		$()取值
+%.o:%.c		模式匹配
+	$(CC) -c $< -o $@	自动变量
+clean:
+	rm $(obj) $(target))		删除

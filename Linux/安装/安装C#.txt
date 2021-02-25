@@ -1,0 +1,12 @@
+1、更新
+sudo apt-get update
+2、安装mono
+sudo apt-get install mono-devel
+如果报错则执行
+sudo apt-get install mono-complete
+查看mono版本
+mono --version
+3、安装IDE
+sudo apt-get install monodevelop
+4、打开IDE
+monodevelop

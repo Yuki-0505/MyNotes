@@ -1,0 +1,4 @@
+#安装deepin-wine
+git clone git@gitee.com:hot_heart/deepin-wine.git
+cd deepin-wine
+sudo sh install.sh

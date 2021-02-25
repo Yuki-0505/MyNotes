@@ -1,0 +1,7 @@
+1、sudo apt install systemsettings
+2、下载aurorae: https://gitlab.com/1314/pingguo-aurorae
+3、解压刚才下载的包 pingguo-aurorae-master.tar.gz
+4、在主目录 ~/ .local / share / aurorae / themes/ 目录下 粘贴解压出来的内容
+    (如果你的主目录/.local/share/下没有aurorae也没事，自己新建文件夹，里面的themes也新建文件夹)
+
+最后打开 systemsettings ，选 应用程序风格 ，选一个你喜欢的配色即可

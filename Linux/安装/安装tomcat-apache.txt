@@ -1,0 +1,8 @@
+tar -zxvf apache-tomcat-7.0.73.tar.gz
+vim /etc/profile
+export CATALINA_HOME=/usr/local/apache-tomcat-7.0.73
+
+cd /usr/local/apache-tomcat-7.0.73/
+vim server.xml
+找到配置8080端口的位置，在节点末尾添加URIEncoding="UTF-8"
+

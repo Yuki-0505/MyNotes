@@ -1,0 +1,13 @@
+Alt+Shift+S
+Alt+/
+Alt+上/下
+Alt+Ctrl+上/下
+Alt+Shift+R
+Alt+Shift+M
+Ctrl+Shift+O
+Ctrl+Shift+F
+Shift+Enter
+Ctrl+D
+Ctrl+/
+Ctrl+1(数字)
+Ctrl+F11

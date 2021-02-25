@@ -1,0 +1,6 @@
+1、空格太小
+setting->font family->'monospace'
+2、去除标题栏
+setting->Title Bar Style->Windows
+解决快捷键冲突
+gio mime inode/directory dde-file-manager.desktop

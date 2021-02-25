@@ -1,0 +1,2 @@
+修改/usr/share/applications下的Firefox文件
+Exec=env MOZ_GTK_TITLEBAR_DECORATION=client /usr/bin/firefox-zh %U

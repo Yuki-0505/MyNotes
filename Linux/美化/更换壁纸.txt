@@ -1,0 +1,1 @@
+sudo cp -r pictures/* /usr/share/wallpapers/deepin/

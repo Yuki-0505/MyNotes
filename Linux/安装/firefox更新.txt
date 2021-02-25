@@ -1,0 +1,3 @@
+cd ~/Downloads
+sudo tar xjvf firefox-76.0.1.tar.bz2
+sudo cp -r firefox/* /usr/lib/firefox-zh/

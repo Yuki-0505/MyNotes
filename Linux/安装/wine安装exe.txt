@@ -1,0 +1,7 @@
+创建容器
+1.cp -r ~/.deepinwine/Deepin-QQ ~/.bottle 或
+2.WINEPREFIX=~/.bottle deepin-wine winecfg
+
+运行程序
+1.WINEPREFIX=~/.bottle deepin-wine *.exe 或
+2.deepin-wine *.exe

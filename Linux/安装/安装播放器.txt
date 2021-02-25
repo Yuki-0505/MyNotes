@@ -1,0 +1,8 @@
+flash
+tar -xzvf flash...
+sudo cp libflashplayer.so /usr/lib/mozilla/plugins
+sudo cp -r usr/* /usr
+重启
+
+html5
+sudo apt-get install ubuntu-restricted-extras

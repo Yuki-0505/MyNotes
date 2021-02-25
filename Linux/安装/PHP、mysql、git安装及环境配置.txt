@@ -1,0 +1,48 @@
+1、安装apache
+sudo apt-get update
+sudo apt-get install apache2
+cd /etc/apache2/sites-enabled
+sudo vim 000-default.conf
+Docunent /var/www/php
+
+2、安装PHP
+sudo apt-get install php7.2
+php -v
+	2.1安装PHP7.2插件
+sudo apt-get install libapache2-mod-php7.2
+	2.2安装php扩展
+sudo apt-get install php7.2-gd php7.2-mbstring php7.2-xml
+
+3、安装mysql
+sudo apt-get install mysql-server
+sudo apt-get install mysql-client
+mysql-v
+	3.1安装PHP的mysql插件
+sudo apt-get install php7.2-mysql
+
+4、安装composer
+sudo apt-get install composer
+composer
+
+#安装nginx
+#sudo apt-get install nginx
+#cd /etc/nginx/sites-enabled
+
+5、安装git拉取项目
+sudo apt-get install git
+git
+cd /var/www/
+sudo chmod 777 html
+ls -l
+git clone https://github.com/Yuki-0505/php.git
+
+6、重启
+service apache2 restart
+service mysql restart
+
+7、检测
+firefox 127.0.0.1/php/index.php
+
+卸载
+sudo apt-get --purge remove apahce2
+

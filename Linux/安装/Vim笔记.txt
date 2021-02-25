@@ -1,0 +1,18 @@
+Vim
+
+wq
+syntax on
+set number
+vim  ~/.vimrc
+h/j/k/l
+w/v
+ctrl+f
+ctrl+b
+88gg
+10h/j/k/l
+/grep
+n
+shift n
+cc/u
+c2c/p
+v

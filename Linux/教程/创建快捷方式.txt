@@ -1,0 +1,24 @@
+1、在桌面在创建一个名为“eclipse.desktop”的文件，并在文件中添加如下内容，然后命令：sudo cp /home/你的用户名/桌面/eclipse.desktop /usr/share/applications/ 把桌面的eclipse.desktop文件复制到/usr/share/applications/目录下
+
+[Desktop Entry]  
+Encoding=UTF-8  
+Name=Eclipse Platfrom  
+Comment=Eclipse IDE  
+Exec=/home/cy/Eclipse/eclipse/eclipse  
+Icon=/home/cy/Eclipse/eclipse/icon.xpm  
+Terminal=false  
+StartupNotify=true  
+Type=Application  
+Categories=Application;Development;  
+
+注意：下面的两个地方要换成自己系统中eclipse解压目录下的相应文件，直接cp上面代码的的时候注意去掉每行后面的空格。
+
+ 5 Exec=/home/cy/Eclipse/eclipse/eclipse  
+ 6 Icon=/home/cy/Eclipse/eclipse/icon.xpm  
+
+2、给eclipse.desktop文件赋权
+
+用命令：cd /usr/share/applications/ 进入eclipse.desktop文件的目录下，然后执行命令：chmod u+x eclipse.desktop 就完成了赋权
+
+3、找到/usr/share/applications/eclipse.desktop文件，然后右击选择复制到->桌面，就可以在桌面上看到eclipse的桌面快捷方式了
+

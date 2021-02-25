@@ -1,0 +1,62 @@
+1、卸载wine
+sudo apt remove wine
+sudo apt autoremove
+2、安装依赖（64bit）
+sudo dpkg --print-foreign-architectures 
+sudo dpkg --add-architecture i386
+ 
+sudo apt-get -y install gcc-multilib
+sudo apt-get -y install g++-6-multilib
+sudo apt-get -y install bison 
+sudo apt-get -y install flex 
+sudo apt-get -y install libsane-dev 
+sudo apt-get -y install libv4l-dev 
+sudo apt-get -y install libgphoto2-dev 
+sudo apt-get -y install liblcms2-dev 
+sudo apt-get -y install libpulse-dev 
+sudo apt-get -y install libudev-dev 
+sudo apt-get -y install libcapi20-dev 
+sudo apt-get -y install libcups2-dev 
+sudo apt-get -y install libgsm1-dev 
+sudo apt-get -y install libkrb5-dev 
+sudo apt-get -y install libtiff5-dev 
+sudo apt-get -y install libmpg123-dev 
+sudo apt-get -y install libopenal-dev 
+sudo apt-get -y install libldap2-dev 
+sudo apt-get -y install libxml2-dev 
+sudo apt-get -y install libxxf86vm-dev 
+sudo apt-get -y install libxslt1-dev 
+sudo apt-get -y install libglu1-mesa-dev 
+sudo apt-get -y install libarrayfire-opencl-dev 
+sudo apt-get -y install libarrayfire-opencl3 
+sudo apt-get -y install fontconfig 
+sudo apt-get -y install libfontconfig1-dev 
+sudo apt-get -y install libosmesa6-dev 
+sudo apt-get -y install libsane-dev 
+sudo apt-get -y install libx11-dev 
+sudo apt-get -y install libfreetype6-dev 
+sudo apt-get -y install libxcursor-dev 
+sudo apt-get -y install libxi-dev 
+sudo apt-get -y install libxshmfence-dev 
+sudo apt-get -y install libxrandr-dev 
+sudo apt-get -y install libxfixes-dev 
+sudo apt-get -y install libxinerama-dev 
+sudo apt-get -y install libxcomposite-dev 
+sudo apt-get -y install libpcap-dev 
+
+3、源码下载地址：https://dl.winehq.org/wine/source/
+
+4、编译安装64位wine
+sudo mkdir -p wine64
+cd wine64
+sudo ../configure --enable-win64
+sudo make -j 4
+sudo make install
+
+5、查看
+wine64
+
+6、卸载
+进入编译好的wine源码目录，然后执行下面的代码：
+cd wine64
+sudo make uninstall

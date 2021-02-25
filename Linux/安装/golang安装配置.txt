@@ -1,0 +1,17 @@
+下载：
+https://golang.google.cn/
+解压：
+sudo tar -C /usr/local -xzf go1.13.4.linux-amd64.tar.gz
+打开profile文件：
+cd /etc
+sudo dedit profile
+设置环境变量：
+# GO
+export PATH=$PATH:~/software/go/bin
+#GOPATH
+export GOPATH=~/Documents/code/go
+export PATH=$PATH:$GOPATH/bin
+临时加载profile：
+source /etc/profile
+检测：
+go version

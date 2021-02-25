@@ -1,0 +1,23 @@
+1、下载android sdk
+http://tools.android-studio.org/index.php/sdk/ 
+
+2、移动
+sudo cp android-sdk_r24.4.1-linux.tgz /usr/local/
+
+3、解压
+sudo tar -zxvf android-sdk_r24.4.1-linux.tgz
+
+4、更改所属组和用户
+sudo chgrp yuki android-sdk_r24.4.1-linux.tgz -hR
+sudo chown yuki android-sdk_r24.4.1-linux.tgz -hR
+
+5、配置环境变量
+sudo vim /etc/profile
+--------------
+export ANDROID_HOME=/usr/local/android-sdk-linux
+export PATH=$ANDROID_HOME/tools:$PATH
+--------------
+source /etc/profile
+
+6、安装所有包
+android update sdk --no-ui

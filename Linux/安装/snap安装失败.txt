@@ -1,0 +1,5 @@
+1、查看安装情况
+snap changes
+
+2、终止，重新安装
+sudo snap abort 5

@@ -1,0 +1,4 @@
+1、查找mysql服务器
+which mysql
+2、在找到的路径后加
+--verbose --help|grep -A 1 'Default options'

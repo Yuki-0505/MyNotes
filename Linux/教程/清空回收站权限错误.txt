@@ -1,0 +1,2 @@
+cd ~/.local/share/Trash/files
+sudo rm -r *

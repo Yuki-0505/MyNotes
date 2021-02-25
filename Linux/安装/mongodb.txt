@@ -1,0 +1,68 @@
+安装环境
+
+    deepin 15.3 X64（教程也适用于其他linux系统）
+
+安装
+
+    下载地址：https://fastdl.mongodb.org/linux/mongodb-linux-x86_64-2.6.0.tgz（或者到官网上下载别的版本）
+
+    完成下载后，把软件包移动到软件安装的目录下，我这里是/usr/local/。
+
+    解压：tar -zxvf mongodb-linux-x86_64-2.6.0.tgz（权限不够，要加sudo，下同）
+
+    更改安装目录：mv mongodb-linux-x86_64-2.6.0.tgz mongodb
+
+    创建mongodb数据库存放路径：mkdir -p /data/db
+
+    //创建mongodb数据库日志存放路径：mkdir -p /usr/local/mongodb/log/（存放在安装路径下）
+
+启动服务
+
+    //启动mongodb服务：/usr/local/mongodb/bin/mongod --dbpath=/data/db --logpath=/usr/local/mongodb/log/mongodb.log --logappend --port 27017 --fork（若出现错误，可能是权限不够）
+
+    --dbpath 数据库路径(数据文件)
+    --logpath 数据库日志文件路径
+    --port 启用端口号
+    --fork 在后台运行
+    --auth 是否需要验证权限登录(用户名和密码)
+
+    进入mongodb数据库控制台：
+
+$ cd /usr/local/mongodb/bin/
+/usr/local/mongodb/bin$ ./mongo
+
+mongodb控制台
+
+3.退出：exit
+
+设置mongodb
+添加安装路径到path中：
+$ vim /etc/profile
+添加一下代码到文件的最后一行，并保存:
+//export PATH=$PATH:/usr/local/mongodb/bin
+export MONGODB=/usr/local/mongodb
+export PATH=$PATH:${MONGODB}/bin
+
+
+使设置生效：source /etc/profile
+进入控制台：mongo（在任意位置）
+设置mongodb开机自启：
+
+    //编辑mongodb配置文件，设置启动参数：vim /usr/local/mongodb/mongodb.conf（没有就新建一个）
+
+    加入以下参数并保存：
+
+    dbpath=/data/db #数据库路径
+    port=27017 #端口号
+    fork=true #设置后台运行
+    logappend=true
+    shardsvr=true
+    pidfilepath=/usr/local/mongodb/mongo.pid
+    logpath=/usr/local/mongodb/log/mongodb.log #日志输出文件路径
+    directoryperdb=true
+    auth=false #关闭认证
+
+    //将/usr/local/mongodb/bin/mongod --config /usr/local/mongodb/mongodb.conf添加到 /etc/rc.local 中。（若没效果，可能是权限的问题，在前面加上sudo）
+    sudo $MONGODB/bin/mongod
+
+    重启电脑，打开命令行，输入mongo，即可验证。

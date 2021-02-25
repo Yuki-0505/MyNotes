@@ -1,0 +1,72 @@
+1、安装wget、git
+sudo apt-get -y install wget git
+2、git clone
+git clone https://github.com/teddysun/lamp.git
+cd lamp
+sudo chmod 755 *.sh
+3、安装
+sudo ./lamp.sh
+
+4、组件安装
+    关于本脚本支持的所有组件，都可以在脚本交互里可选安装。
+5、使用提示
+lamp add      创建虚拟主机
+lamp del      删除虚拟主机
+lamp list     列出虚拟主机
+lamp version  显示当前版本
+6、如何升级
+注意：双斜杠//后的内容不要复制输入
+
+cd ~/lamp
+git reset --hard         // Resets the index and working tree
+git pull                 // Get latest version first
+chmod 755 *.sh
+
+./upgrade.sh             // Select one to upgrade
+./upgrade.sh apache      // Upgrade Apache
+./upgrade.sh db          // Upgrade MySQL or MariaDB
+./upgrade.sh php         // Upgrade PHP
+./upgrade.sh phpmyadmin  // Upgrade phpMyAdmin
+./upgrade.sh adminer     // Upgrade Adminer
+7、如何卸载
+
+./uninstall.sh
+8、程序目录
+
+MySQL 安装目录: /usr/local/mysql
+MySQL 数据库目录：/usr/local/mysql/data（默认路径，安装时可更改）
+MariaDB 安装目录: /usr/local/mariadb
+MariaDB 数据库目录：/usr/local/mariadb/data（默认路径，安装时可更改）
+PHP 安装目录: /usr/local/php
+Apache 安装目录： /usr/local/apache
+9、命令一览
+
+MySQL 或 MariaDB 命令
+/etc/init.d/mysqld (start|stop|restart|status)
+Apache 命令
+/etc/init.d/httpd (start|stop|restart|status)
+Memcached 命令（可选安装）
+/etc/init.d/memcached (start|stop|restart|status)
+Redis 命令（可选安装）
+/etc/init.d/redis-server (start|stop|restart|status)
+10、网站根目录
+
+默认的网站根目录： /data/www/default
+
+11、信息
+Apache: httpd-2.4.46
+Default Website: http://43.250.201.101
+Apache Location: /usr/local/apache
+Apache Additional Modules: do_not_install
+
+Database: mysql-5.7.32
+MySQL Location: /usr/local/mysql
+MySQL Data Location: /usr/local/mysql/data
+MySQL Root Password: root
+
+Database Management Modules:
+
+PHP: do_not_install
+PHP Additional Extensions: do_not_install
+
+KodExplorer: do_not_install

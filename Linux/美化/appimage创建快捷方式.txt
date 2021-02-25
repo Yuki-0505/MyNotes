@@ -1,0 +1,14 @@
+1、创建命令链接
+sudo ln -s /usr/local/openshot/OpenShot-v2.5.1-x86_64.AppImage /usr/bin/openshot
+2、下载图标
+3、命令行创建快捷方式
+cat > ~/.local/share/applications/tim.desktop <<EOL
+[Desktop Entry]
+Encoding=UTF-8
+Name=OpenShot
+Exec=openshot
+Icon=/usr/local/openshot/openshot.png
+Terminal=false
+Type=Application
+Categories=Graphics;
+EOL

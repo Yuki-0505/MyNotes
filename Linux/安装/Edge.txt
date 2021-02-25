@@ -1,0 +1,7 @@
+https://bbs.deepin.org/post/205539
+1.下载Linux安装包：https://www.microsoftedgeinsider.com/zh-cn/
+2.执行安装： sudo dpkg -i  microsoft-edge-dev_88.0.692.0-1_amd64.deb
+3.替换图标（默认不是Edge的图标）：在桌面建一个文件 “microsoft-edge-dev.desktop”，代码如下:
+
+4.替换文件（Deepin每次更新，都会恢复原来的Edge图标，可以再次替换文件，我现在就是这么做的）：sudo cp microsoft-edge-dev.desktop /usr/share/applications/
+5.在浏览器中输入 edge://flags ，然后搜索 samesite ，把所涉及到的两个选项关闭即可登录deepin论坛。

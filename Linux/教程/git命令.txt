@@ -1,0 +1,33 @@
+Git
+设置用户名
+git config --global user.name 'Yuki-0505'
+设置用户邮箱
+git config --global user.email '2243104010@qq.com'
+查看用户设置信息
+git config --list
+初始化仓库
+git init
+查看状态
+git status
+工作区=》暂存区
+git add "filename"
+暂存区=》仓库
+git commit -m "此次修改的描述"
+
+删除三步
+rm demo1.php
+git rm demo1.php
+git commit -m 'remove demo1.php'
+git status
+
+下载仓库
+git clone https://github.com/Yuki-0505/php.git
+
+远程仓库配置
+vim .git/config
+-------------------------
+[remote "origin"]
+        url = https://Yuki-0505:147258369Swl@github.com/Yuki-0505/php.git
+-------------------------
+本地上传远程仓库
+git push

@@ -1,0 +1,124 @@
+
+create database db_1 charset utf8MB4
+
+alter database db_1 charset gbk
+
+show databases
+
+drop database db_1	删除数据库
+
+use db_1;
+创建表
+create table t_1(
+    Id int,
+    Name varchar(50),
+    Graden int
+);
+create table t_2 like t1;
+显示表
+show tables;
+show tables from db_1;
+show tables like '%like';
+show tables like '_like';
+
+drop table t_1;
+
+查看字段
+desc t_1;
+describe t_1;
+show columns from t_1;
+
+以行/列显示
+desc t_1\g
+desc t-1\G
+改表名
+rename table t_1 to t_3;
+改字符集
+alter table t_2 charset gbk;
+添加字段
+alter table t_1 add Age int;
+alter table t_1 add column Age int;
+alter table t_1 add Card varchar(50) first;
+alter table t_1 add Card varchar(50) after Name;
+修改字段名及类型
+alter table t_1 change gender Gender varchar(50);
+修改字段类型
+alter table t_1 modify Gender char(18);
+alter table t-1 modify Gender char(18) after Id;
+删除字段
+alter table t_1 drop Age;
+
+插入数据
+insert into t_2 values(2010,'yuki',16);
+insert into t_2 (Id,Age,Name) values(2010,16,'yuki');
+查看数据
+select Name,Age from t_2;
+
+update t_2 set Age=16;
+update t_2 set Age=18 where Id=2011;
+
+delete form t_3;
+delete from t_2 where Id=2012;
+
+
+
+select * frome T_Students
+
+Insert into T_Students(Id,Gender,Age,Name) value(4,0,30,'谢霆锋')
+
+Update T_Students Set Age=10 
+where Name='tom'
+
+Delete from T_Students where Age>50 or Age<=20
+
+select Name as '姓名',Salary as '工资',Age+1 from T_Employees
+
+select * from T_Employees
+where age>25
+
+select count(*) from  T_Employees
+where age>25
+
+select sum(salary) from T_Employees
+where age>25
+
+select avg(salary) from T_Employees
+where age>25
+
+select * from T_Employees
+where Age>25
+order by age ASC,salary DESC
+-- 年龄大于25，按年龄升序，年龄相同则工资降序排列
+-- order by需要放在最后，limit之前
+
+select * from T_Employees
+where Name like '_erry'
+-- '_erry'单字符匹配
+
+select * from T_Employees
+where Name like 'T%'
+-- 'T%'多字符匹配
+
+select * from T_Employees
+where Name!=null
+-- 结果不确定
+
+select * from T_Employees
+where Name is not null
+-- 搜索名字不为’不确定‘的记录
+
+select * from T_Employees
+where age>15
+order by age ASC
+limit 2,3
+-- 顺序 where,order by,limit
+
+select age,count(*) from T_Employees
+group by age
+-- 按年龄分组后，统计各组个数
+
+select o.Number,o.Price,c.Name,c.Age
+from T_Orders as o
+left join T_Customers as c
+on o.CustomerId=c.Id
+

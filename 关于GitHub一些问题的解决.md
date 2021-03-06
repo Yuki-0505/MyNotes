@@ -42,7 +42,6 @@
 199.232.96.133     	avatars9.githubusercontent.com
 # GitHub End
 # 连接超时
-192.30.255.112		github.com git 
-185.31.16.184		github.global.ssl.fastly.net
+140.82.114.4:443		github.com git
 ```
 

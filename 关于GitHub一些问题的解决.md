@@ -42,6 +42,6 @@
 199.232.96.133     	avatars9.githubusercontent.com
 # GitHub End
 # 连接超时
-140.82.114.4:443		github.com git
+52.74.223.119		github.com git
 ```
 

@@ -42,6 +42,10 @@
 199.232.96.133     	avatars9.githubusercontent.com
 # GitHub End
 # 连接超时
-52.74.223.119		github.com git
+51.81.93.81:433     github.com    #vpn代理
+13.229.188.59:443   github.com
+13.250.177.223:443  github.com
+140.82.114.4:443    github.com    #IPAddress
+52.74.223.119	github.com		#站长工具
 ```
 
